@@ -1,0 +1,7 @@
+type Metadata @entity {
+  id: ID!
+  dataToken: Bytes
+  createdBy: Bytes
+  flags: Bytes
+  data: Bytes
+}
