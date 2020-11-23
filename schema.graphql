@@ -2,6 +2,7 @@ type Metadata @entity {
   id: ID!
   dataToken: Bytes
   createdBy: Bytes
+  updatedBy: Bytes
   flags: Bytes
   data: Bytes
 }

@@ -1,4 +1,4 @@
-specVersion: 0.0.1
+specVersion: 0.0.2
 description: Ocean Protocol On-chain Metadata
 repository: https://github.com/0x3bfc/metaocean-subgraph
 schema:
@@ -13,7 +13,7 @@ dataSources:
       startBlock: 6175244
     mapping:
       kind: ethereum/events
-      apiVersion: 0.0.1
+      apiVersion: 0.0.4
       language: wasm/assemblyscript
       entities:
         - Metadata
@@ -21,8 +21,8 @@ dataSources:
         - name: Metadata
           file: ./abis/Metadata.json
       eventHandlers:
-        - event: MetadataCreated(address,address,bytes,bytes)
+        - event: MetadataCreated(indexed address,indexed address,bytes,bytes)
           handler: handleMetadataCreated
-        - event: MetadataUpdated(address,address,bytes,bytes)
+        - event: MetadataUpdated(indexed address,indexed address,bytes,bytes)
           handler: handleMetadataUpdated
       file: ./src/mapping.ts
